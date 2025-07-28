@@ -102,7 +102,7 @@ $ git log --oneline
 49c52ab chore: Create initial file
 33794d7 (origin/main, origin/HEAD) Initial commit
 ```
-### Editing Commit History
+### 2. Editing Commit History
 ```
 hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
 $git rebase -i HEAD~2
@@ -112,4 +112,53 @@ $git rebase -i HEAD~2
  create mode 100644 test2.md
 Successfully rebased and updated refs/heads/main.
 ```
-###  
+###  3. Keeping History Tidy - squashing commits
+
+```
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$git rebase -i HEAD~2
+interactive rebase in progress; onto 327fb1c
+Last commands done (2 commands done):
+   pick 1b3fdef initial commit
+   squash 4296568 .
+No commands remaining.
+You are currently rebasing branch 'main' on '327fb1c'.
+  (all conflicts fixed: run "git rebase --continue")
+```
+### 4. Splitting a commit
+```
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git log --oneline
+c874e8c (HEAD -> main, origin/main, origin/HEAD) new changes
+00f7653 new changes
+51b6202 missing file error handled
+75b701c chore: Create another file
+49c52ab chore: Create initial file
+33794d7 Initial commit
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git reset --soft 75b701c
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git restore --staged test4.md
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git commit -m 'create third file'
+[main cf7e3e6] create third file
+ 2 files changed, 115 insertions(+), 1 deletion(-)    
+ create mode 100644 test3.md
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git add test4.md
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git commit -m 'creaate fourth file'
+[main e97ec10] creaate fourth file
+ 1 file changed, 0 insertions(+), 0 deletions(-)      
+ create mode 100644 test4.md
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$ git rebase --continue
+You must edit all merge conflicts and then
+mark them as resolved using git add
+```
