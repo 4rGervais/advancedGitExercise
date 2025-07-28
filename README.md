@@ -77,5 +77,33 @@ Author: 4rGervais <164742695+4rGervais@users.noreply.github.com>
 Date:   Mon Jul 28 09:44:52 2025 +0200
 
     Initial commit
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main)
+$ git add .
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main)
+$ git commit --amend -m 'missing file error handled'
+[main 51b6202] missing file error handled        
+ Date: Mon Jul 28 09:49:19 2025 +0200
+ 3 files changed, 81 insertions(+), 1 deletion(-)
+ create mode 100644 test3.md
+ create mode 100644 test4.md
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main) 
+$ git log --oneline
+51b6202 (HEAD -> main) missing file error handled
+75b701c chore: Create another file
+49c52ab chore: Create initial file
+33794d7 (origin/main, origin/HEAD) Initial commit
 ```
-### 
+### Editing Commit History
+```
+
+```
