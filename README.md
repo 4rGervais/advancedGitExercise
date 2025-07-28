@@ -1,5 +1,4 @@
 # advancedGitExercise
-
 # Getting Started
 
 ```
@@ -105,5 +104,12 @@ $ git log --oneline
 ```
 ### Editing Commit History
 ```
-
+hp@Gervais-NIYONSHUTI MINGW64 /d/cogito ergo sum/advancedGitExercise (main|REBASE 1/2)
+$git rebase -i HEAD~2
+[detached HEAD 5788fdd] create Second file
+ Date: Fri Feb 28 12:29:54 2025 +0200
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test2.md
+Successfully rebased and updated refs/heads/main.
 ```
+###  
